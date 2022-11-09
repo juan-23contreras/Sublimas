@@ -3,7 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/drawable/circular_button_shape.xml" value="0.2115" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/drawable/login_button_bk.xml" value="0.181" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/drawable/login_shape_bk.xml" value="0.181" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/activity_detailed_products.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/activity_main.xml" value="0.203125" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/layout_login.xml" value="0.33" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/layout_register.xml" value="0.33" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/menu/dashboard_menu.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>
