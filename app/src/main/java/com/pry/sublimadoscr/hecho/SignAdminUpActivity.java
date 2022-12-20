@@ -1,8 +1,5 @@
 package com.pry.sublimadoscr.hecho;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -25,10 +22,12 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import androidx.appcompat.app.AppCompatActivity;
 
-public class SignUpActivity extends AppCompatActivity {
 
-    private TextInputEditText fname, lname, email, phone, confirm_password, passwordEditText;
+public class SignAdminUpActivity extends AppCompatActivity {
+
+    private TextInputEditText fname, lname, email, phone, confirm_password,  passwordEditText;
     private Button mSignUp;
 
     // Volley variables
@@ -59,9 +58,9 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void createUser(final String fname, final String lname, final String email, final String phone, final String password){
 
-        mRequestQueue = Volley.newRequestQueue(SignUpActivity.this);
+        mRequestQueue = Volley.newRequestQueue(SignAdminUpActivity.this);
         // Progress
-        mSignUp.setText("Creando usuario...");
+        mSignUp.setText("CREANDO USUARIO ADMIN...");
 
                 mStringRequest = new StringRequest(Request.Method.POST, getBaseUrl(), new Response.Listener<String>() {
                     @Override
@@ -75,16 +74,16 @@ public class SignUpActivity extends AppCompatActivity {
 
                             if (success.equals("1")) {
 
-                                Toast.makeText(SignUpActivity.this,message,Toast.LENGTH_SHORT).show();
-                                mSignUp.setText("Registrado");
+                                Toast.makeText(SignAdminUpActivity.this,message,Toast.LENGTH_SHORT).show();
+                                mSignUp.setText("Inscribirse");
 
 
                             }
 
                         } catch (JSONException e) {
 
-                            Toast.makeText(SignUpActivity.this,e.toString(),Toast.LENGTH_LONG).show();
-                            mSignUp.setText("Registrando");
+                            Toast.makeText(SignAdminUpActivity.this,e.toString(),Toast.LENGTH_LONG).show();
+                            mSignUp.setText("Inscribirse");
 
                         }
 
@@ -93,8 +92,8 @@ public class SignUpActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
 
-                        Toast.makeText(SignUpActivity.this,error.toString(),Toast.LENGTH_LONG).show();
-                        mSignUp.setText("Registrando");
+                        Toast.makeText(SignAdminUpActivity.this,error.toString(),Toast.LENGTH_LONG).show();
+                        mSignUp.setText("Inscribirse");
 
                     }
                 }) {
@@ -105,7 +104,7 @@ public class SignUpActivity extends AppCompatActivity {
                         params.put("fname",fname);
                         params.put("lname",lname);
                         params.put("email",email);
-                        params.put("id","2");
+                        params.put("id","1");
                         params.put("phone",phone);
                         params.put("password",password);
 

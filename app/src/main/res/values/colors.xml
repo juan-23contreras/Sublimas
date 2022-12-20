@@ -17,4 +17,31 @@
     <color name="colorBlack">#1E1E1E</color> <!-- We will no use the regular #000000 -->
     <color name="colorWhite">#FFFFFF</color>
 
+    <color name="soliddd">#3f4c71</color>
+    <color name="green_flat">#2ecc71</color>
+    <color name="red_flat">#e74c3c</color>
+    <color name="viewBg">#f1f5f8</color>
+    <color name="album_title">#4c4c4c</color>
+    <color name="grey">#bfbfbf</color>
+    <color name="white">#fff</color>
+    <color name="cian">#00fcff</color>
+    <color name="link_blue">#005ce6</color>
+
+
+    <color name="graylight">#fafafa</color>
+    <color name="startblue">#09c6df</color>
+    <color name="endblue">#0bcce6</color>
+    <color name="DarkPrimary">#292b3d</color>
+
+    <color name="black_transparent_70">#B3000000</color>
+    <color name="black_transparent_55">#8C000000</color>
+    <color name="black_transparent_50">#80000000</color>
+    <color name="black_transparent_40">#66000000</color>
+    <color name="black_transparent_35">#59000000</color>
+    <color name="black_transparent_30">#4D000000</color>
+    <color name="black_transparent_25">#40000000</color>
+    <color name="black_transparent_20">#33000000</color>
+    <color name="black_transparent_15">#26000000</color>
+    <color name="black_transparent_10">#1A000000</color>
+
 </resources>

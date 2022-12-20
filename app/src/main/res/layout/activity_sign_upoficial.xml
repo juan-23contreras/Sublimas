@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".SignUpActivity">
+    tools:context=".hecho.SignUpActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/sign_up_title"
+        android:text="@string/register"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="#1e1e1e"/>
@@ -39,14 +39,14 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-            android:hint="@string/first_name_prompt">
+            style="@style/parent"
+            android:hint="@string/name">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fname_editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress">
+                android:inputType="textAutoComplete">
 
             </com.google.android.material.textfield.TextInputEditText>
 
@@ -64,14 +64,14 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-            android:hint="@string/last_name_prompt">
+            style="@style/parent"
+            android:hint="@string/lastname">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/lname_editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress">
+                android:inputType="textAutoComplete">
 
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
@@ -89,8 +89,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-            android:hint="@string/email_address_prompt">
+            style="@style/parent"
+            android:hint="@string/login_email_hint">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email_editText"
@@ -106,30 +106,6 @@
     </androidx.cardview.widget.CardView>
 
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_max"
-        app:cardCornerRadius="@dimen/card_view_corner_radius">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-            android:hint="@string/id_number_prompt">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/user_id_editText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress">
-
-            </com.google.android.material.textfield.TextInputEditText>
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-    </androidx.cardview.widget.CardView>
-
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -140,14 +116,14 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-            android:hint="@string/phone_number_prompt">
+            style="@style/parent"
+            android:hint="@string/phone">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/phone_editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress">
+                android:inputType="phone">
 
             </com.google.android.material.textfield.TextInputEditText>
 
@@ -167,14 +143,14 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-            android:hint="@string/password_prompt">
+            style="@style/parent"
+            android:hint="@string/login_password_hint">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/user_password_editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress">
+                android:inputType="textVisiblePassword">
 
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
@@ -192,14 +168,14 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-            android:hint="@string/confirm_password_prompt">
+            style="@style/parent"
+            android:hint="@string/login_passwordconfirm_hint">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/confirm_password_editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress">
+                android:inputType="textVisiblePassword">
 
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
@@ -214,13 +190,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_max"
-        android:text="@string/sign_up_title"/>
+        android:text="@string/toregister"/>
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="By tapping create account i agree to the term and conditions."
+            android:text="@string/teminates"
             android:layout_marginTop="@dimen/margin_max"/>
 
 

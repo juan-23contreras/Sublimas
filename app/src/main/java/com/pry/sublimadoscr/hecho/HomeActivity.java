@@ -1,20 +1,11 @@
 package com.pry.sublimadoscr.hecho;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,13 +15,20 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.material.appbar.AppBarLayout;
+import com.pry.sublimadoscr.R;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -44,7 +42,8 @@ public class HomeActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private List<Product> products;
     private ProgressBar progressBar;
-    private static  final String BASE_URL = "http://192.168.100.16/android/getProducts.php";
+//    private static  final String BASE_URL = "http://192.168.100.16/android/getProducts.php";
+    private static  final String BASE_URL = "https://sicazmovil.000webhostapp.com/sublimados/getProducts.php";
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -113,7 +112,6 @@ public class HomeActivity extends AppCompatActivity {
                             for (int i = 0; i<array.length(); i++){
 
                                 JSONObject object = array.getJSONObject(i);
-
                                 String title = object.getString("title");
                                 double price = object.getDouble("price");
                                 double rating = object.getDouble("rating");
@@ -122,8 +120,8 @@ public class HomeActivity extends AppCompatActivity {
                                 String rate = String.valueOf(rating);
                                 float newRate = Float.valueOf(rate);
 
-                                Product product = new Product(title,price, newRate,image);
-                                products.add(product);
+                              //  Product product = new Product(title,title, title,image);
+                             //   products.add(product);
                             }
 
                         }catch (Exception e){

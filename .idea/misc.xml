@@ -3,15 +3,38 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/drawable/btnsignin_gradient.xml" value="0.1" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/drawable/btnsignup_gradient.xml" value="0.177" />
         <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/drawable/circular_button_shape.xml" value="0.2115" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/drawable/edittext_background.xml" value="0.1" />
         <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/drawable/login_button_bk.xml" value="0.181" />
         <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/drawable/login_shape_bk.xml" value="0.181" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/activity_admin_main.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/activity_detailed_products.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/activity_inicio.xml" value="0.21" />
         <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/activity_login_errror.xml" value="0.33" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/activity_loginoficial.xml" value="0.25" />
         <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/activity_main.xml" value="0.203125" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/activity_notifications.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/activity_producto.xml" value="0.33" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/activity_sign_up.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/activity_sign_upoficial.xml" value="0.33" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/activity_subirventa.xml" value="0.22" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/app_bar_main.xml" value="0.1" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/content_main.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/edittext_background.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/layout_login.xml" value="0.33" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/layout_login_error.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/layout_register.xml" value="0.33" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/layout_registr_error.xml" value="0.25" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/nav_header_main.xml" value="0.21" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/layout/products_list_item_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/menu/activity_main_drawer.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/menu/dashboard_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/menu/menu_usuario.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/Zero1/AndroidStudioProjects/sublimadoscr/app/src/main/res/xml/network_security_config.xml" value="0.203125" />
       </map>
     </option>
   </component>

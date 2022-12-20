@@ -1,47 +1,99 @@
 package com.pry.sublimadoscr.hecho;
 
 public class Product {
-    private String title, image;
-    private double price;
-    private float rating;
+    private String   $codigo;
+    private String   $id;
+    private String $categoria;
+    private String nombre;
+    private String $precio ;
+    private String  $descripcion ;
+    private String   $cantidad ;
 
-    public Product (String title, double price,float rating, String image){
-
-        this.title = title;
-        this.image = image;
-        this.rating = rating;
-        this.price = price;
+    public Product(String $id,String $codigo, String $categoria, String nombre, String $precio, String $descripcion, String $cantidad, String $photo, String $caracteristicas) {
+        this.$id= $id;
+        this.$codigo = $codigo;
+        this.$categoria = $categoria;
+        this.nombre = nombre;
+        this.$precio = $precio;
+        this.$descripcion = $descripcion;
+        this.$cantidad = $cantidad;
+        this.$photo = $photo;
+        this.$caracteristicas = $caracteristicas;
     }
 
-    public String getTitle() {
-        return title;
+    private String    $photo;
+    private String $caracteristicas;
+
+
+    public String get$codigo() {
+        return $codigo;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void set$codigo(String $codigo) {
+        this.$codigo = $codigo;
     }
 
-    public String getImage() {
-        return image;
+    public String get$categoria() {
+        return $categoria;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void set$categoria(String $categoria) {
+        this.$categoria = $categoria;
     }
 
-    public double getPrice() {
-        return price;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public float getRating() {
-        return rating;
+    public String get$precio() {
+        return $precio;
     }
 
-    public void setRating(float rating) {
-        this.rating = rating;
+    public void set$precio(String $precio) {
+        this.$precio = $precio;
+    }
+
+    public String get$descripcion() {
+        return $descripcion;
+    }
+
+    public void set$descripcion(String $descripcion) {
+        this.$descripcion = $descripcion;
+    }
+
+    public String get$cantidad() {
+        return $cantidad;
+    }
+
+    public void set$cantidad(String $cantidad) {
+        this.$cantidad = $cantidad;
+    }
+
+    public String get$photo() {
+        return $photo;
+    }
+
+    public void set$photo(String $photo) {
+        this.$photo = $photo;
+    }
+
+    public String get$caracteristicas() {
+        return $caracteristicas;
+    }
+
+    public void set$caracteristicas(String $caracteristicas) {
+        this.$caracteristicas = $caracteristicas;
+    }
+
+    public String get$id() {
+        return $id;
+    }
+
+    public void set$id(String $id) {
+        this.$id = $id;
     }
 }

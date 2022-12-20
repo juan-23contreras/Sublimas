@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.os.Bundle;
 
 import com.google.android.material.appbar.AppBarLayout;
+import com.pry.sublimadoscr.R;
 
 public class NotificationsActivity extends AppCompatActivity {
     // Ui widgets

@@ -49,7 +49,7 @@ tools:context=".LoginActivity">
                 android:text="@string/app_name"
                 android:layout_marginTop="40dp"/>
             <include
-                layout="@layout/layout_login"/>
+                layout="@layout/layout_login_error"/>
 
         </LinearLayout>
         <ImageView

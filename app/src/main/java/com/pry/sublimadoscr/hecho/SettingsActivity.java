@@ -6,6 +6,8 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 
+import com.pry.sublimadoscr.R;
+
 public class SettingsActivity extends AppCompatActivity {
 
     // Ui widgets

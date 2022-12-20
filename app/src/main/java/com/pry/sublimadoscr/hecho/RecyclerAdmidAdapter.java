@@ -15,16 +15,17 @@ import com.pry.sublimadoscr.R;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> {
+public class RecyclerAdmidAdapter extends RecyclerView.Adapter<RecyclerAdmidAdapter.MyViewHolder> {
 
     private Context mContext;
     private List<Product> products = new ArrayList<>();
 
 
-    public RecyclerAdapter (Context context,List<Product> products){
+    public RecyclerAdmidAdapter(Context context, List<Product> products){
         this.mContext = context;
         this.products = products;
     }
@@ -71,12 +72,17 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(mContext,DetailedProductsActivity.class);
-
-                intent.putExtra("title",product.getNombre());
+                Intent intent = new Intent(mContext,CrearProducto.class);
+                intent.putExtra("CLAVE","MOD");
+                intent.putExtra("id_producto",product.get$id());
+                intent.putExtra("codi",product.get$codigo());
+                intent.putExtra("cat",product.get$categoria());
+                intent.putExtra("nombre",product.getNombre());
+                intent.putExtra("precio",product.get$precio());
+                intent.putExtra("descrip",product.get$descripcion());
+                intent.putExtra("cantidad",product.get$cantidad());
                 intent.putExtra("image",product.get$photo());
-                intent.putExtra("rate",product.get$descripcion());
-                intent.putExtra("price",product.get$precio());
+                intent.putExtra("carac",product.get$caracteristicas());
 
                 mContext.startActivity(intent);
 

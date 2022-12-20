@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -19,6 +18,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputEditText;
+import com.pry.sublimadoscr.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -26,7 +26,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity {
+public class MainLoginActivity extends AppCompatActivity {
 
     // Variable declarations
     private TextInputEditText mEmail, mPassword;
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_loginoficial);
 
         // Getting UI views from our xml file
         mEmail = findViewById(R.id.emailAddress_EditText);
@@ -55,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(MainActivity.this,SignUpActivity.class));
-
+                startActivity(new Intent(MainLoginActivity.this, SignUpActivity.class));
+                overridePendingTransition(R.anim.slide_in_right,R.anim.stay);
             }
         });
 
@@ -67,11 +67,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                Intent intent = new Intent(MainActivity.this,HomeActivity.class);
+              /*  Intent intent = new Intent(MainLoginActivity.this,HomeActivity.class);
                 intent.putExtra("email",mEmail.getText().toString());
                 startActivity(intent);
-
-                // signIn(mEmail.getText().toString(), mPassword.getText().toString());
+*/
+                signIn(mEmail.getText().toString(), mPassword.getText().toString());
             }
         });
 
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
         mProgress.setVisibility(View.VISIBLE);
         // Initializing Request queue
-        mRequestQueue = Volley.newRequestQueue(MainActivity.this);
+        mRequestQueue = Volley.newRequestQueue(MainLoginActivity.this);
 
         mStringRequest = new StringRequest(Request.Method.POST,
                 getBaseUrl(), new Response.Listener<String>() {
@@ -98,22 +98,22 @@ public class MainActivity extends AppCompatActivity {
                     if (success.equals("1")) {
 
                         mProgress.setVisibility(View.GONE);
-                        Toast.makeText(MainActivity.this,message,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainLoginActivity.this,message,Toast.LENGTH_SHORT).show();
                         // Finish
                         finish();
                         // Start activity dashboard
-                        startActivity(new Intent(MainActivity.this,HomeActivity.class));
+                        startActivity(new Intent(MainLoginActivity.this,NavigationsActivity.class));
                     }
                     if (success.equals("0")) {
 
                         mProgress.setVisibility(View.GONE);
-                        Toast.makeText(MainActivity.this,message,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainLoginActivity.this,message,Toast.LENGTH_SHORT).show();
                     }
 
                 } catch (JSONException e) {
 
                     mProgress.setVisibility(View.GONE);
-                    Toast.makeText(MainActivity.this,e.toString(),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainLoginActivity.this,e.toString(),Toast.LENGTH_SHORT).show();
 
                 }
 
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
 
                 mProgress.setVisibility(View.GONE);
-                Toast.makeText(MainActivity.this,error.toString(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainLoginActivity.this,error.toString(),Toast.LENGTH_SHORT).show();
 
             }
         }) {
@@ -133,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
                 Map<String, String> params = new HashMap<>();
                 params.put("email",email);
                 params.put("password",password);
+                params.put("role","2");
 
                 return params;
             }
@@ -144,7 +145,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     private String getBaseUrl (){
-        return "http://"+getResources().getString(R.string.machine_ip_address)+"/android/sign_in.php";
+     //return "http://"+getResources().getString(R.string.machine_ip_address)+"/android/sign_in.php";
+        return "https://sicazmovil.000webhostapp.com/sublimados/sign_in.php";
     }
 
 
