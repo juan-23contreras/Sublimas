@@ -35,7 +35,7 @@
         <activity android:name=".hecho.DetailedProductsActivity"/>
         <activity android:name=".hecho.CrearProducto"/>
         <activity android:name=".hecho.MainLoginActivity"/>
-        <activity android:name=".hecho.HomeActivity"/>
+        <activity android:name=".hecho.PedidosActivity"/>
         <activity android:name=".hecho.MainLoginAdmindActivity"/>
         <activity android:name=".hecho.SignAdminUpActivity"/>
         <activity android:name=".hecho.SignUpActivity"
@@ -44,5 +44,6 @@
         <activity android:name=".hecho.NavigationsActivity"/>
         <activity android:name=".hecho.NavigationAdminActivity"/>
         <activity android:name=".hecho.SettingsActivity"/>
+        <activity android:name=".hecho.CrearPedido"/>
     </application>
 </manifest>

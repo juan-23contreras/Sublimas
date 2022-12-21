@@ -67,7 +67,7 @@ public class MainLoginAdmindActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-              /*  Intent intent = new Intent(MainLoginActivity.this,HomeActivity.class);
+              /*  Intent intent = new Intent(MainLoginActivity.this,PedidosActivity.class);
                 intent.putExtra("email",mEmail.getText().toString());
                 startActivity(intent);
 */

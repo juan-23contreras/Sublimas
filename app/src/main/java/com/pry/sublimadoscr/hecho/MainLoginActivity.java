@@ -65,12 +65,6 @@ public class MainLoginActivity extends AppCompatActivity {
         mSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-              /*  Intent intent = new Intent(MainLoginActivity.this,HomeActivity.class);
-                intent.putExtra("email",mEmail.getText().toString());
-                startActivity(intent);
-*/
                 signIn(mEmail.getText().toString(), mPassword.getText().toString());
             }
         });
@@ -96,13 +90,14 @@ public class MainLoginActivity extends AppCompatActivity {
                     String message = jsonObject.getString("message");
 
                     if (success.equals("1")) {
+                        String id = jsonObject.getString("id");
 
                         mProgress.setVisibility(View.GONE);
                         Toast.makeText(MainLoginActivity.this,message,Toast.LENGTH_SHORT).show();
                         // Finish
                         finish();
                         // Start activity dashboard
-                        startActivity(new Intent(MainLoginActivity.this,NavigationsActivity.class));
+                        startActivity(new Intent(MainLoginActivity.this,NavigationsActivity.class).putExtra("id",id));
                     }
                     if (success.equals("0")) {
 

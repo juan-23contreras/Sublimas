@@ -49,10 +49,19 @@
                 style="@style/BoldTitleTextTheme"/>
 
             <TextView
-                android:id="@+id/rating"
+                android:id="@+id/descripcion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/SecondaryTextTheme"/>
+            <Button
+                android:id="@+id/comprarnbtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/btnsignup_gradient"
+                android:text="Comprar"
+                android:layout_marginBottom="10dp"
+                android:textColor="#FFFFFF" />
 
         </LinearLayout>
 

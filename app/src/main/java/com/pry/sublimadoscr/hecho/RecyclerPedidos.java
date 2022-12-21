@@ -15,19 +15,20 @@ import com.pry.sublimadoscr.R;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> {
+public class RecyclerPedidos extends RecyclerView.Adapter<RecyclerPedidos.MyViewHolder> {
 
     private Context mContext;
-    private List<Product> products = new ArrayList<>();
-String id_user;
+    private List<Pedido> products = new ArrayList<>();
 
-    public RecyclerAdapter (Context context,List<Product> products,String id){
+
+    public RecyclerPedidos(Context context, List<Pedido> products){
         this.mContext = context;
         this.products = products;
-        this.id_user = id;
+
     }
 
 
@@ -54,34 +55,19 @@ String id_user;
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(mContext).inflate(R.layout.products_list_item_layout,parent,false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.pedidoi_tem,parent,false);
         return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        final Product product = products.get(position);
+        final Pedido product = products.get(position);
 
-        holder.mPrice.setText("$"+product.get$precio());
+        holder.mPrice.setText("$"+product.getCantidad_t());
       //  holder.mRate.setRating(product.getRating());
-        holder.mTitle.setText(product.getNombre());
-        Glide.with(mContext).load(product.get$photo()).into(holder.mImageView);
+        holder.mTitle.setText(product.getFormapago());
 
-        holder.mContainer.setOnClickListener(v -> {
-
-            Intent intent = new Intent(mContext,DetailedProductsActivity.class);
-            intent.putExtra("id_user", id_user);
-            intent.putExtra("id",product.get$id());
-            intent.putExtra("codigo",product.getNombre());
-            intent.putExtra("title",product.getNombre());
-            intent.putExtra("image",product.get$photo());
-            intent.putExtra("descrip",product.get$descripcion());
-            intent.putExtra("price",product.get$precio());
-
-            mContext.startActivity(intent);
-
-        });
     }
 
     @Override

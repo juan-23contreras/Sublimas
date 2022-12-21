@@ -30,7 +30,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class HomeActivity extends AppCompatActivity {
+public class PedidosActivity extends AppCompatActivity {
 
     // Variable declarations
     private String userEmail;
@@ -39,43 +39,11 @@ public class HomeActivity extends AppCompatActivity {
     private ActionBar mActionBar;
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager manager;
-    private RecyclerView.Adapter mAdapter;
-    private List<Product> products;
+    private RecyclerPedidos mAdapter;
+    private List<Pedido> products;
     private ProgressBar progressBar;
 //    private static  final String BASE_URL = "http://192.168.100.16/android/getProducts.php";
-    private static  final String BASE_URL = "https://sicazmovil.000webhostapp.com/sublimados/getProducts.php";
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        Intent intent;
-
-        if (item.getItemId() == R.id.action_settings){
-
-            intent = new Intent(HomeActivity.this,SettingsActivity.class);
-            startActivity(intent);
-            Toast.makeText(HomeActivity.this,"Settings clicked!",Toast.LENGTH_SHORT).show();
-        }
-
-        if (item.getItemId() == R.id.action_notifications){
-
-            intent = new Intent(HomeActivity.this,NotificationsActivity.class);
-            startActivity(intent);
-            Toast.makeText(HomeActivity.this,"Notifications clicked!",Toast.LENGTH_SHORT).show();
-        }
-
-        return true;
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.dashboard_menu,menu);
-
-        return true;
-    }
+    private static  final String BASE_URL = "https://sicazmovil.000webhostapp.com/sublimados/getPedidos.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +56,7 @@ public class HomeActivity extends AppCompatActivity {
         mActionBar = getSupportActionBar();
 
         recyclerView = findViewById(R.id.products_recyclerView);
-        manager = new GridLayoutManager(HomeActivity.this, 2);
+        manager = new GridLayoutManager(PedidosActivity.this, 2);
         recyclerView.setLayoutManager(manager);
         products = new ArrayList<>();
 
@@ -112,23 +80,23 @@ public class HomeActivity extends AppCompatActivity {
                             for (int i = 0; i<array.length(); i++){
 
                                 JSONObject object = array.getJSONObject(i);
-                                String title = object.getString("title");
-                                double price = object.getDouble("price");
-                                double rating = object.getDouble("rating");
-                                String image = object.getString("image");
+                                String codi = object.getString("2");
+                                String cantip = object.getString("3");
+                                String forma = object.getString("4");
+                                String precio = object.getString("5");
+                                String mensaje = object.getString("6");
 
-                                String rate = String.valueOf(rating);
-                                float newRate = Float.valueOf(rate);
 
-                              //  Product product = new Product(title,title, title,image);
-                             //   products.add(product);
+
+                          Pedido product = new Pedido(codi,cantip,forma,precio,mensaje);
+                                products.add(product);
                             }
 
                         }catch (Exception e){
 
                         }
 
-                        mAdapter = new RecyclerAdapter(HomeActivity.this,products);
+                        mAdapter = new RecyclerPedidos(PedidosActivity.this,products);
                         recyclerView.setAdapter(mAdapter);
 
                     }
@@ -137,12 +105,12 @@ public class HomeActivity extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
 
                 progressBar.setVisibility(View.GONE);
-                Toast.makeText(HomeActivity.this, error.toString(),Toast.LENGTH_LONG).show();
+                Toast.makeText(PedidosActivity.this, error.toString(),Toast.LENGTH_LONG).show();
 
             }
         });
 
-        Volley.newRequestQueue(HomeActivity.this).add(stringRequest);
+        Volley.newRequestQueue(PedidosActivity.this).add(stringRequest);
 
     }
 

@@ -6,6 +6,8 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,7 +19,7 @@ public class DetailedProductsActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     private ActionBar mActionBar;
     private ImageView mImage;
-    private TextView mTitle, mRating, mPrice;
+    private TextView mTitle, descrip2, mPrice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +29,7 @@ public class DetailedProductsActivity extends AppCompatActivity {
         mToolbar = findViewById(R.id.toolbar);
         mImage = findViewById(R.id.image_view);
         mPrice = findViewById(R.id.price);
-        mRating = findViewById(R.id.rating);
+        descrip2 = findViewById(R.id.descripcion);
         mTitle = findViewById(R.id.name);
 
         // Setting up action bar
@@ -38,18 +40,28 @@ public class DetailedProductsActivity extends AppCompatActivity {
 
         // Catching incoming intent
         Intent intent = getIntent();
-        double price = intent.getDoubleExtra("price",0);
-        float rate = intent.getFloatExtra("rate",0);
+        String price = intent.getStringExtra("price");
+        String descrip = intent.getStringExtra("descrip");
         String title = intent.getStringExtra("title");
+        String id = intent.getStringExtra("id");
+        String id_usuario = intent.getStringExtra("id_user");
+        String codigo = intent.getStringExtra("codigo");
         String image = intent.getStringExtra("image");
 
         if (intent !=null){
-
             mActionBar.setTitle(title);
             mTitle.setText(title);
-            mRating.setText("Rating :"+rate+" /2");
-            mPrice.setText(String.valueOf(price));
+           descrip2.setText(descrip);
+            mPrice.setText("$ "+price);
             Glide.with(DetailedProductsActivity.this).load(image).into(mImage);
+            Button button=findViewById(R.id.comprarnbtn);
+            button.setOnClickListener(v -> {
+                startActivity(new Intent(DetailedProductsActivity.this,CrearPedido.class).
+                        putExtra("CLAVE","CREAR").
+                        putExtra("id_prod",id).
+                        putExtra("id_usuario",id_usuario).
+                        putExtra("codigo",codigo));
+            });
         }
 
     }
