@@ -15,8 +15,8 @@
     <string name="toregister">Crear Cuenta</string>
     <string name="create_account_title">Crea tu cuenta</string>
     <string name="teminates">Al tocar crear cuenta, acepto los términos y condiciones.</string>
-
-
+    <string name="deleteAccount"><u>Eliminar Cuenta</u></string>
+    <string name="deleteAccount1"><u>Elimina tu Cuenta</u></string>
 
     <!-- String resources related to menus -->
     <string name="settings_title">Ajustes</string>

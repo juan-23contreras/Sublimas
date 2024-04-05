@@ -40,78 +40,79 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_upoficial);
         //for changing status bar icon colors
-        if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.M){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         }
         fname = findViewById(R.id.fname_editText);
         lname = findViewById(R.id.lname_editText);
         email = findViewById(R.id.email_editText);
         phone = findViewById(R.id.phone_editText);
-        confirm_password = findViewById(R.id.confirm_password_editText);
+
         mSignUp = findViewById(R.id.sign_up_button);
         passwordEditText = findViewById(R.id.user_password_editText);
 
 
-       mSignUp.setOnClickListener(v -> createUser(fname.getText().toString(),lname.getText().toString(),email.getText().toString(),phone.getText().toString(),passwordEditText.getText().toString()));
+        mSignUp.setOnClickListener(v -> createUser(fname.getText().toString(), lname.getText().toString(), email.getText().toString(), phone.getText().toString(), passwordEditText.getText().toString()));
 
     }
 
 
-    private void createUser(final String fname, final String lname, final String email, final String phone, final String password){
+    private void createUser(final String fname, final String lname, final String email, final String phone, final String password) {
 
         mRequestQueue = Volley.newRequestQueue(SignUpActivity.this);
         // Progress
         mSignUp.setText("Creando usuario...");
 
-                mStringRequest = new StringRequest(Request.Method.POST, getBaseUrl(), new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
+        mStringRequest = new StringRequest(Request.Method.POST, getBaseUrl(), new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
 
-                        try {
-                            JSONObject jsonObject = new JSONObject(response);
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
 
-                            String success = jsonObject.getString("success");
-                            String message = jsonObject.getString("message");
+                    String success = jsonObject.getString("success");
+                    String message = jsonObject.getString("message");
 
-                            if (success.equals("1")) {
+                    if (success.equals("1")) {
 
-                                Toast.makeText(SignUpActivity.this,message,Toast.LENGTH_SHORT).show();
-                                mSignUp.setText("Registrado");
+                        Toast.makeText(SignUpActivity.this, message, Toast.LENGTH_SHORT).show();
+                        mSignUp.setText("Registrado");
 
-
-                            }
-
-                        } catch (JSONException e) {
-
-                            Toast.makeText(SignUpActivity.this,e.toString(),Toast.LENGTH_LONG).show();
-                            mSignUp.setText("Registrando");
-
-                        }
-
+                    } else if (success.equals("0")) {
+                        Toast.makeText(SignUpActivity.this, message, Toast.LENGTH_SHORT).show();
+                        mSignUp.setText("Registrate");
                     }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
 
-                        Toast.makeText(SignUpActivity.this,error.toString(),Toast.LENGTH_LONG).show();
-                        mSignUp.setText("Registrando");
+                } catch (JSONException e) {
+                    Toast.makeText(SignUpActivity.this, e.toString(), Toast.LENGTH_LONG).show();
+                    mSignUp.setText("Registrate");
 
-                    }
-                }) {
-                    @Override
-                    protected Map<String, String> getParams() throws AuthFailureError {
+                }
 
-                        Map<String, String> params = new HashMap<>();
-                        params.put("fname",fname);
-                        params.put("lname",lname);
-                        params.put("email",email);
-                        params.put("id","2");
-                        params.put("phone",phone);
-                        params.put("password",password);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
 
-                        return params;
-                    }
-                };
+                Toast.makeText(SignUpActivity.this, error.toString(), Toast.LENGTH_LONG).show();
+                mSignUp.setText("Registrate");
+
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+                Map<String, String> params = new HashMap<>();
+                params.put("fname", fname);
+                params.put("lname", lname);
+                params.put("email", email);
+                params.put("id", "2");
+                params.put("phone", phone);
+                params.put("password", password);
+
+                return params;
+            }
+        };
 
         mStringRequest.setShouldCache(false);
         mRequestQueue.add(mStringRequest);
@@ -120,17 +121,18 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
 
-    private String getBaseUrl (){
-        return "https://sicazmovil.000webhostapp.com/sublimados/sign_up.php";
+    private String getBaseUrl() {
+        return "https://ticssoluciones.000webhostapp.com/VersionApp/Sublimadosphp/sign_up.php";
     }
-    public void onLoginClick(View View){
-    //    startActivity(new Intent(this, RegisterActivity.class));
-        overridePendingTransition(R.anim.slide_in_right,R.anim.stay);
+
+    public void onLoginClick(View View) {
+        //    startActivity(new Intent(this, RegisterActivity.class));
+        overridePendingTransition(R.anim.slide_in_right, R.anim.stay);
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        overridePendingTransition(R.anim.slide_in_right,R.anim.stay);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.stay);
     }
 }

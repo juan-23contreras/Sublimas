@@ -50,11 +50,6 @@
                 android:text="Elije como quieres iniciar sesion" />
 
 
-
-
-
-
-
             <Button
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"

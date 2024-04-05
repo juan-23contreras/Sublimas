@@ -1,7 +1,9 @@
 package com.pry.sublimadoscr.hecho;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -69,6 +71,11 @@ public class MainLoginActivity extends AppCompatActivity {
             }
         });
 
+        TextView DeleteAccount = findViewById(R.id.textV_delete);
+        DeleteAccount.setOnClickListener(view -> {
+            startActivity(new Intent(MainLoginActivity.this, DeleteAccount.class));
+            overridePendingTransition(R.anim.slide_in_right,R.anim.stay);
+        });
     }
 
 
@@ -141,8 +148,7 @@ public class MainLoginActivity extends AppCompatActivity {
 
     private String getBaseUrl (){
      //return "http://"+getResources().getString(R.string.machine_ip_address)+"/android/sign_in.php";
-        return "https://sicazmovil.000webhostapp.com/sublimados/sign_in.php";
+        return "https://ticssoluciones.000webhostapp.com/VersionApp/Sublimadosphp/sign_in.php";
     }
-
 
 }

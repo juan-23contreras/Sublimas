@@ -11,6 +11,11 @@
             android:icon="@drawable/metododepago"
             android:title="Compras" />
 
+        <item
+            android:id="@+id/item_delete"
+            android:icon="@android:drawable/ic_menu_delete"
+            android:title="Eliminar cuenta" />
+
     </group>
 
 

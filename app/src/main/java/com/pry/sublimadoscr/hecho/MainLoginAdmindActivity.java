@@ -2,6 +2,7 @@ package com.pry.sublimadoscr.hecho;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -50,18 +51,7 @@ public class MainLoginAdmindActivity extends AppCompatActivity {
         mSignUp = findViewById(R.id.signup_textView);
         mProgress = findViewById(R.id.progress);
 
-
-        mSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                startActivity(new Intent(MainLoginAdmindActivity.this, SignAdminUpActivity.class));
-                overridePendingTransition(R.anim.slide_in_right,R.anim.stay);
-            }
-        });
-
-
-
+        mSignUp.setVisibility(View.GONE);
         mSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,6 +65,11 @@ public class MainLoginAdmindActivity extends AppCompatActivity {
             }
         });
 
+        TextView DeleteAccount = findViewById(R.id.textV_delete);
+        DeleteAccount.setOnClickListener(view -> {
+            startActivity(new Intent(MainLoginAdmindActivity.this, DeleteAccount.class));
+            overridePendingTransition(R.anim.slide_in_right,R.anim.stay);
+        });
     }
 
 
@@ -91,7 +86,7 @@ public class MainLoginAdmindActivity extends AppCompatActivity {
 
                 try {
                     JSONObject jsonObject = new JSONObject(response);
-
+                    Log.d("NONE",jsonObject.toString());
                     String success = jsonObject.getString("success");
                     String message = jsonObject.getString("message");
 
@@ -111,7 +106,7 @@ public class MainLoginAdmindActivity extends AppCompatActivity {
                     }
 
                 } catch (JSONException e) {
-
+                    Log.d("Error","ERRO");
                     mProgress.setVisibility(View.GONE);
                     Toast.makeText(MainLoginAdmindActivity.this,e.toString(),Toast.LENGTH_SHORT).show();
 
@@ -146,7 +141,7 @@ public class MainLoginAdmindActivity extends AppCompatActivity {
 
     private String getBaseUrl (){
      //return "http://"+getResources().getString(R.string.machine_ip_address)+"/android/sign_in.php";
-        return "https://sicazmovil.000webhostapp.com/sublimados/sign_in.php";
+        return "https://ticssoluciones.000webhostapp.com/VersionApp/Sublimadosphp/sign_in.php";
     }
 
 

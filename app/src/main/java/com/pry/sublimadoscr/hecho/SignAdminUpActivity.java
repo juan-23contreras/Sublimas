@@ -46,7 +46,6 @@ public class SignAdminUpActivity extends AppCompatActivity {
         lname = findViewById(R.id.lname_editText);
         email = findViewById(R.id.email_editText);
         phone = findViewById(R.id.phone_editText);
-        confirm_password = findViewById(R.id.confirm_password_editText);
         mSignUp = findViewById(R.id.sign_up_button);
         passwordEditText = findViewById(R.id.user_password_editText);
 
@@ -120,7 +119,7 @@ public class SignAdminUpActivity extends AppCompatActivity {
 
 
     private String getBaseUrl (){
-        return "https://sicazmovil.000webhostapp.com/sublimados/sign_up.php";
+        return "https://ticssoluciones.000webhostapp.com/VersionApp/Sublimadosphp/sign_up.php";
     }
     public void onLoginClick(View View){
     //    startActivity(new Intent(this, RegisterActivity.class));

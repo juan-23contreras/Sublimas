@@ -29,7 +29,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/login"
+            android:text="@string/deleteAccount1"
             android:textColor="#1e1e1e"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -78,7 +78,7 @@
                     android:id="@+id/password_EditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress">
+                    android:inputType="textPassword">
 
                 </com.google.android.material.textfield.TextInputEditText>
             </com.google.android.material.textfield.TextInputLayout>
@@ -93,11 +93,11 @@
             app:cardElevation="0dp">
 
             <Button
-                android:id="@+id/signin_button"
+                android:id="@+id/DELETEBUTTON"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/circular_button_shape"
-                android:text="@string/login"
+                android:text="@string/deleteAccount"
                 android:textColor="@color/colorWhite" />
 
         </androidx.cardview.widget.CardView>
@@ -112,32 +112,5 @@
             android:textSize="12sp" />
 
     </LinearLayout>
-
-
-    <TextView
-        android:id="@+id/signup_textView"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_above="@+id/textV_delete"
-        android:layout_marginBottom="20dp"
-        android:background="?selectableItemBackground"
-        android:clickable="true"
-        android:focusable="true"
-        android:gravity="center"
-        android:padding="16dp"
-        android:text="@string/login_signup_hint" />
-
-    <TextView
-        android:id="@+id/textV_delete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:textColor="@color/red_flat"
-        android:background="?selectableItemBackground"
-        android:clickable="true"
-        android:focusable="true"
-        android:gravity="center"
-        android:padding="16dp"
-        android:text="@string/deleteAccount" />
 
 </RelativeLayout>

@@ -159,30 +159,6 @@
     </androidx.cardview.widget.CardView>
 
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_max"
-        app:cardCornerRadius="@dimen/card_view_corner_radius">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/parent"
-            android:hint="@string/login_passwordconfirm_hint">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/confirm_password_editText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textVisiblePassword">
-
-            </com.google.android.material.textfield.TextInputEditText>
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-    </androidx.cardview.widget.CardView>
-
 
 
     <Button
