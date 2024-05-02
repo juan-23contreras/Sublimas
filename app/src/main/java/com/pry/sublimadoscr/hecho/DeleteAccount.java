@@ -76,7 +76,7 @@ public class DeleteAccount extends AppCompatActivity {
 
     public void eliminarCuenta(final String email, final String password) {
         mProgress.setVisibility(View.VISIBLE);
-        String url = "https://ticssoluciones.000webhostapp.com/VersionApp/Sublimadosphp/DeleteAccount.php"; // Reemplaza con la URL de tu servicio PHP
+        String url = "https://ticssoluciones2024.000webhostapp.com/sublimados/DeleteAccount.php"; // Reemplaza con la URL de tu servicio PHP
 
         // Crear una solicitud POST para enviar los datos
         StringRequest request = new StringRequest(Request.Method.POST, url,

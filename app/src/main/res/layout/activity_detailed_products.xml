@@ -60,6 +60,7 @@
                 android:layout_marginTop="1dp"
                 android:background="@drawable/btnsignup_gradient"
                 android:text="Comprar"
+                android:visibility="gone"
                 android:layout_marginBottom="10dp"
                 android:textColor="#FFFFFF" />
 

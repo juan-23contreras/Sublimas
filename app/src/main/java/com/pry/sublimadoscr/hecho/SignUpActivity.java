@@ -28,7 +28,7 @@ import java.util.Map;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    private TextInputEditText fname, lname, email, phone, confirm_password, passwordEditText;
+    private TextInputEditText fname, lname, email, confirm_password, passwordEditText;
     private Button mSignUp;
 
     // Volley variables
@@ -46,18 +46,18 @@ public class SignUpActivity extends AppCompatActivity {
         fname = findViewById(R.id.fname_editText);
         lname = findViewById(R.id.lname_editText);
         email = findViewById(R.id.email_editText);
-        phone = findViewById(R.id.phone_editText);
+      //  phone = findViewById(R.id.phone_editText);
 
         mSignUp = findViewById(R.id.sign_up_button);
         passwordEditText = findViewById(R.id.user_password_editText);
 
 
-        mSignUp.setOnClickListener(v -> createUser(fname.getText().toString(), lname.getText().toString(), email.getText().toString(), phone.getText().toString(), passwordEditText.getText().toString()));
+        mSignUp.setOnClickListener(v -> createUser(fname.getText().toString(), lname.getText().toString(), email.getText().toString(), passwordEditText.getText().toString()));
 
     }
 
 
-    private void createUser(final String fname, final String lname, final String email, final String phone, final String password) {
+    private void createUser(final String fname, final String lname, final String email, final String password) {
 
         mRequestQueue = Volley.newRequestQueue(SignUpActivity.this);
         // Progress
@@ -74,7 +74,6 @@ public class SignUpActivity extends AppCompatActivity {
                     String message = jsonObject.getString("message");
 
                     if (success.equals("1")) {
-
                         Toast.makeText(SignUpActivity.this, message, Toast.LENGTH_SHORT).show();
                         mSignUp.setText("Registrado");
 
@@ -93,7 +92,6 @@ public class SignUpActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
                 Toast.makeText(SignUpActivity.this, error.toString(), Toast.LENGTH_LONG).show();
                 mSignUp.setText("Registrate");
 
@@ -106,10 +104,9 @@ public class SignUpActivity extends AppCompatActivity {
                 params.put("fname", fname);
                 params.put("lname", lname);
                 params.put("email", email);
-                params.put("id", "2");
-                params.put("phone", phone);
+                params.put("phone", "");
                 params.put("password", password);
-
+                params.put("id", "2");
                 return params;
             }
         };
@@ -122,7 +119,8 @@ public class SignUpActivity extends AppCompatActivity {
 
 
     private String getBaseUrl() {
-        return "https://ticssoluciones.000webhostapp.com/VersionApp/Sublimadosphp/sign_up.php";
+       // https://ticssoluciones2024.000webhostapp.com/sublimados/sign_up.php
+        return "https://ticssoluciones2024.000webhostapp.com/sublimados/sign_up.php";
     }
 
     public void onLoginClick(View View) {

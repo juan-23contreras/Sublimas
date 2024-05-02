@@ -141,7 +141,7 @@ public class MainLoginAdmindActivity extends AppCompatActivity {
 
     private String getBaseUrl (){
      //return "http://"+getResources().getString(R.string.machine_ip_address)+"/android/sign_in.php";
-        return "https://ticssoluciones.000webhostapp.com/VersionApp/Sublimadosphp/sign_in.php";
+        return "https://ticssoluciones2024.000webhostapp.com/sublimados/sign_in.php";
     }
 
 

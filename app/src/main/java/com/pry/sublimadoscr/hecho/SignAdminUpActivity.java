@@ -119,7 +119,7 @@ public class SignAdminUpActivity extends AppCompatActivity {
 
 
     private String getBaseUrl (){
-        return "https://ticssoluciones.000webhostapp.com/VersionApp/Sublimadosphp/sign_up.php";
+        return "https://ticssoluciones2024.000webhostapp.com/sublimados/sign_up.php";
     }
     public void onLoginClick(View View){
     //    startActivity(new Intent(this, RegisterActivity.class));

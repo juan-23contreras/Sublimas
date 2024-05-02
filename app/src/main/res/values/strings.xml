@@ -26,6 +26,7 @@
     <string name="machine_ip_address">192.129.23.1/</string>
     <string name="navigation_drawer_open">open</string>
     <string name="navigation_drawer_close">close</string>
+    <string name="username">Nombre de Usuario</string>
 
 
 </resources>

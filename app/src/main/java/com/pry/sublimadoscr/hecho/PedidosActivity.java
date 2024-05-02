@@ -43,7 +43,7 @@ public class PedidosActivity extends AppCompatActivity {
     private List<Pedido> products;
     private ProgressBar progressBar;
 //    private static  final String BASE_URL = "http://192.168.100.16/android/getProducts.php";
-    private static  final String BASE_URL = "https://ticssoluciones.000webhostapp.com/VersionApp/Sublimadosphp/getPedidos.php";
+    private static  final String BASE_URL = "https://ticssoluciones2024.000webhostapp.com/sublimados/getPedidos.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
